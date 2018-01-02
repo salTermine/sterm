@@ -1,0 +1,1 @@
+/* STERM is a bash like shell */
