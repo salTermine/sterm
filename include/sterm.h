@@ -19,13 +19,17 @@
 /* Define functions */
 int sterm_loop();
 int isBuiltin(char **arguments);
+int execute_cmd(char **arguments);
 char *get_prompt();
 char **parse_cmd(char *cmd);
 void clear_screen();
+void ch_dir(char **arguments);
+void p_dir();
 void *check_malloc(size_t size);
 
 /* Declare constants */
 #define MAX_LENGTH 1024
+#define CMD_LENGTH 256
 #define DELIM " \t\r\n"
 
 /* Macros */

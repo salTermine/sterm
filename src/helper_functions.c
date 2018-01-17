@@ -13,3 +13,18 @@ void *check_malloc(size_t size) {
 void clear_screen() {
     fprintf(stdout,"\033[2J\033[1;1H");
 }
+
+void ch_dir(char **arguments) {
+	if(arguments[1] == NULL) chdir(getenv("HOME"));
+	else if(chdir(arguments[1]) == -1) fprintf(stderr," %s: Directory does not exist\n", arguments[1]);
+}
+
+void p_dir() {
+
+	char cwd[256];
+
+	if (getcwd(cwd, sizeof(cwd)) == NULL)
+	    perror("getcwd() error");
+	else
+		fprintf(stdout,"%s\n", cwd);
+}
